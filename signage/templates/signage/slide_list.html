@@ -1,0 +1,13 @@
+{% extends "signage/base.html" %}
+
+{% block title %}{{ block.super }} - Slides{% endblock title %}
+
+{% block content %}
+  <div class="row">
+    {% for slide in slide_list %}
+      <div class="col-xs-6 col-md-3">
+        {% include "signage/_slide_thumbnail.html" %}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}

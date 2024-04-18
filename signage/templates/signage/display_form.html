@@ -1,0 +1,32 @@
+{% extends "signage/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }} - Edit Display{% endblock title %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-9">
+      <div class="alert alert-info" role="alert">
+        Signage displayed at <a href="{{ display.get_display_url }}" class="alert-link">{{ display.get_display_url}}</a>
+      </div>
+      <form action="" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {% if not display and perms.signage.add_display or display and perms.signage.change_display %}
+          <button type="submit" class="btn btn-primary">Save</button>
+        {% endif %}
+        <a href="{% url "signage:display_list" %}" class="btn btn-default" role="button">Done</a>
+        {% if display and perms.signage.delete_display %}
+          <a href="{% url "signage:display_delete" display.pk %}" class="btn btn-danger pull-right" role="button">Delete</a>
+        {% endif %}
+      </form>
+    </div>
+    <div class="col-md-3">
+      {% for slide in display.get_slides %}
+        {% include "signage/_slide_thumbnail.html" %}
+      {% endfor %}
+
+      {% include "signage/_video_thumbnail.html" with video=display.get_video %}
+    </div>
+  </div>
+{% endblock content %}

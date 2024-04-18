@@ -1,0 +1,13 @@
+{% extends "signage/base.html" %}
+
+{% block title %}{{ block.super }} - Videos{% endblock title %}
+
+{% block content %}
+  <div class="row">
+    {% for video in video_list %}
+      <div class="col-xs-6 col-md-3">
+        {% include "signage/_video_thumbnail.html" %}
+      </div>
+    {% endfor %}
+  </div>
+{% endblock content %}
