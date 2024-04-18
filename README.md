@@ -78,7 +78,6 @@ $ pip install -r requirements.txt
 
 3. Set Environment Variables in your machine:
 ```
-
 ENGINE = os.environ["DAIRY_SIGNAGE_DB_ENGINE"]
 NAME = os.environ["DAIRY_SIGNAGE_DB_NAME"]
 USER = os.environ["DAIRY_SIGNAGE_DB_USERNAME"]
@@ -92,10 +91,9 @@ SECRET_KEY = os.environ["DAIRY_SIGNAGE_SECRET_KEY"]
 4. Switch *DEBUG* to **False** in a *settings.py* file
 ```
 DEBUG = False
-LOCAL_LOGIN = False
 ```
 
-5. Add a Media root directory to store certificate files
+5. Make sure there is a Media root directory to store uploaded files
 ```
 MEDIA_ROOT = 'your_media_root'
 ```

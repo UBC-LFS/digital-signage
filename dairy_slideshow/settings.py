@@ -16,24 +16,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# # Database and user credentials (from Database Setup)
-# ENGINE = "django.db.backends.postgresql"
-# NAME = "slideshow_db"
-# USER = "super_user"
-# PASSWORD = "password"
-
-# # Default settings for database
-# HOST = "localhost"
-# PORT = ""
-
-# SECRET_KEY = "django-insecure-n-@kz-ike@2u-f$d*76#5^nh+1@2snd0u=27!s+zrem*^l+gif"
-
-# SECURITY WARNING: keep the secret key used in production secret!
-
 ENGINE = os.environ["DAIRY_SIGNAGE_DB_ENGINE"]
 NAME = os.environ["DAIRY_SIGNAGE_DB_NAME"]
 USER = os.environ["DAIRY_SIGNAGE_DB_USERNAME"]
