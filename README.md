@@ -1,4 +1,4 @@
-# Diary Digital Signage
+# Dairy Digital Signage
 
 This project is a web-based digital signange app, running on Django and Apache with PostgreSQL. It is a fork of https://github.com/jbittel/django-signage and uses the BSD-3 License.
 
