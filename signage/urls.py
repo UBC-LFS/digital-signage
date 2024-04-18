@@ -4,6 +4,7 @@ from . import views
 app_name = "signage"
 
 urlpatterns = [
+    path("", views.DisplayList.as_view(), name="display_list"),
     path("displays/", views.DisplayList.as_view(), name="display_list"),
     path("display/create/", views.DisplayCreate.as_view(), name="display_create"),
     path(
